@@ -1,5 +1,5 @@
 .ReactModalPortal > div {
-  opacity: 0;
+  opacity: 0.0;
 }
 
 .ReactModalPortal .ReactModal__Overlay {
@@ -10,16 +10,16 @@
 }
 
 .ReactModalPortal .ReactModal__Overlay--after-open {
-  opacity: 1;
+  opacity: 1.0;
 }
 
 .ReactModalPortal .ReactModal__Overlay--before-close {
-  opacity: 0;
+  opacity: 0.0;
 }
 
 .modal {
-  background: $light-blue;
-  color: #FFFFFF;
+  background: $lt-blue;
+  color: white;
   max-width: 30rem;
   outline: none;
   padding: $l-size;

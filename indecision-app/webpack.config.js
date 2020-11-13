@@ -1,31 +1,26 @@
 const path = require('path');
 
-module.exports = (env) => {
-  const isProduction = env == 'production';
-
-  return {
-    entry: './src/app.jsx',
-    output: {
-      path: path.join(__dirname, 'public'),
-      filename: 'bundle.js',
-    },
-    module: {
-      rules: [{
-        loader: 'babel-loader',
-        test: /\.jsx$/,
-        exclude: /node_modules/,
-      },{
-        test: /\.s?css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-        ],
-      }],
-    },
-    devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
-    devServer: {
-      contentBase: path.join(__dirname, 'public'),
-    },
-  };
-}
+module.exports = {
+  entry: './src/app.jsx',
+  output: {
+    path: path.join(__dirname, 'public'),
+    filename: 'bundle.js',
+  },
+  module: {
+    rules: [{
+      loader: 'babel-loader',
+      test: /\.jsx$/,
+      exclude: /node_modules/,
+    },{
+      use: ['style-loader', 'css-loader', 'sass-loader'],
+      test: /\.s?css$/,
+    }]
+  },
+  devtool: 'cheap-module-eval-source-map',
+  devServer: {
+    host: '0.0.0.0',
+    disableHostCheck: true,
+    contentBase: path.join(__dirname, 'public'),
+    public: 'karan.local.newedenanalytics.net:54343/'
+  },
+};

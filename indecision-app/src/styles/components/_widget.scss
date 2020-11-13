@@ -1,11 +1,11 @@
 // Widget
 .widget {
-  background: $light-blue;
+  background: $lt-blue;
   margin-bottom: $xl-size;
 }
 
 .widget__message {
-  border-bottom: 1px solid lighten($light-blue, 10%);
+  border-bottom: 1px solid lighten($lt-blue, 10%);
   color: $off-white;
   margin: 0;
   padding: $l-size;
