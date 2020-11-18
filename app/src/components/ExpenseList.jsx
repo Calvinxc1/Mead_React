@@ -15,7 +15,6 @@ const ExpenseList = (props) => <div>
       />)}
     </div>
   }
-
 </div>;
 
 const mapStateToProps = (state) => ({

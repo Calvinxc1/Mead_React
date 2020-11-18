@@ -11,3 +11,4 @@ services:
     ports:
     - 54343:8080
     command: ["yarn", "run", "dev-server"]
+    #command: ["node", "server/server.js"]

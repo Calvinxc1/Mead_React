@@ -5,17 +5,17 @@ import moment from 'moment';
 import {ExpenseListFilters} from './../../components/ExpenseListFilters.jsx';
 import filters, {activeFilters} from './../fixtures/filters.jsx';
 
-let setTextFilter, sortBy, setDates, wrapper;
+let setTextFilter, setSortBy, setDates, wrapper;
 
 beforeEach(() => {
   setTextFilter = jest.fn();
-  sortBy = jest.fn();
+  setSortBy = jest.fn();
   setDates = jest.fn();
 
   wrapper = shallow(<ExpenseListFilters
     filters={filters}
     setTextFilter={setTextFilter}
-    sortBy={sortBy}
+    setSortBy={setSortBy}
     setDates={setDates}
   />);
 });
@@ -38,7 +38,7 @@ test('should handle text change', () => {
 test('should sort by amount', () => {
   const value = 'amount';
   wrapper.find('select').simulate('change', {target:{value}});
-  expect(sortBy).toHaveBeenLastCalledWith(value);
+  expect(setSortBy).toHaveBeenLastCalledWith(value);
 });
 
 test('should handle date changes', () => {
